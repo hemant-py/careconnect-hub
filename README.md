@@ -1,73 +1,332 @@
-# Welcome to your Lovable project
+Hospital Internal Management System (HIMS)
 
-## Project info
+A modern, role-based Hospital Internal Management System designed to unify patient care, clinical workflows, operations, billing, and administration into one secure, scalable platform.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+🚀 Overview
 
-## How can I edit this code?
+The Hospital Internal Management System (HIMS) is a comprehensive web application built for mid-sized hospitals to streamline:
 
-There are several ways of editing your application.
+Patient registration & scheduling
 
-**Use Lovable**
+Electronic Medical Records (EMR)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Clinical workflows (orders, nursing tasks)
 
-Changes made via Lovable will be committed automatically to this repo.
+Lab & pharmacy operations
 
-**Use your preferred IDE**
+Inventory management
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Billing & insurance claims
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Administrative & security controls
 
-Follow these steps:
+The system centralizes hospital operations, reduces manual coordination, and improves visibility across departments.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+🎯 Key Features
+👥 Patient Management (ADT + Scheduling)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Patient registration with unique MRN
 
-# Step 3: Install the necessary dependencies.
-npm i
+Appointment scheduling (calendar + list view)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Admission, transfer, and discharge (ADT)
+
+Real-time inpatient tracking
+
+Search, filters, and status management
+
+📁 Electronic Medical Records (EMR)
+
+Encounter creation and management
+
+SOAP clinical notes
+
+Allergies & medication tracking
+
+Lab report integration
+
+Prescription management
+
+Patient timeline view
+
+🩺 Clinical Workflows
+
+Order entry (lab, medication, procedures)
+
+Nursing task management
+
+Priority-based order queues
+
+Clinical decision support alerts
+
+Status tracking and audit logging
+
+🧪 Lab Module
+
+Lab order queue
+
+Result entry & publishing
+
+Automatic EMR integration
+
+Billing linkage
+
+💊 Pharmacy
+
+Prescription queue
+
+Drug inventory tracking
+
+Dispensing workflow
+
+Stock alerts
+
+Billing synchronization
+
+📦 Inventory Management
+
+Item & supplier management
+
+Purchase orders & stock receiving
+
+Low-stock alerts
+
+Stock movement logs
+
+💳 Billing & Insurance
+
+Invoice generation
+
+Line item auto-population from services
+
+Payment recording
+
+Insurance claim submission & tracking
+
+Revenue dashboards
+
+🛠 Administrative Panel
+
+Staff management
+
+Role-based access control (RBAC)
+
+Permission matrix
+
+Audit logs
+
+System analytics dashboard
+
+🔐 Role-Based Access Control
+
+The system enforces permissions by role:
+
+Admin/IT
+
+Reception
+
+Doctor
+
+Nurse
+
+Lab Technician
+
+Pharmacist
+
+Billing/Finance
+
+Inventory Manager
+
+Each role has scoped access to relevant modules and actions.
+
+🎨 Design System
+
+The UI follows a consistent design system:
+
+Primary Color
+
+#1D4ED8 (Blue)
+
+Status Colors
+
+Success: #16A34A
+
+Warning: #F59E0B
+
+Danger: #DC2626
+
+Info: #0284C7
+
+Button Types
+
+Primary (Save / Create / Confirm)
+
+Secondary (Cancel / Back)
+
+Ghost (Edit / View)
+
+Danger (Delete / Void)
+
+All buttons maintain consistent height, spacing, and interaction states.
+
+🗂 System Architecture (High-Level)
+Patient (Core Entity)
+ ├── Appointments
+ ├── Admissions (ADT)
+ ├── Encounters
+ │    ├── Clinical Notes
+ │    ├── Orders
+ │    │     ├── Lab
+ │    │     ├── Pharmacy
+ │    │     └── Procedures
+ ├── Lab Results
+ ├── Prescriptions
+ └── Billing Records
+
+All modules connect back to the Patient (MRN) as the central entity.
+
+🧩 Core Modules Structure
+
+Each module includes:
+
+Dashboard View
+
+List + Detail Pages
+
+Create / Edit Forms
+
+Scheduling View (Calendar + List)
+
+Filters & Search
+
+Audit Logging
+
+📊 Dashboards
+
+Each module dashboard includes:
+
+KPI summary cards
+
+Status-based widgets
+
+Alerts panel
+
+Quick action buttons
+
+Real-time data updates
+
+📅 Scheduling Features
+
+Calendar (Day / Week / Month)
+
+List view
+
+Status-based color tagging
+
+Reschedule / Cancel functionality
+
+Filter by staff, department, status
+
+🔎 Global Features
+
+Global patient search (Name / MRN / Phone)
+
+Export to CSV
+
+Activity logs
+
+Confirmation modals for destructive actions
+
+Form validation & error handling
+
+Pagination & sorting
+
+Secure authentication
+
+🛡 Security & Compliance
+
+Role-based access control (RBAC)
+
+Audit trail logging
+
+Secure authentication
+
+Controlled edit permissions for signed records
+
+Action-level tracking (billing edits, prescriptions, admissions)
+
+🏗 Installation
+# Clone repository
+git clone https://github.com/your-org/hospital-internal-management-system.git
+
+# Navigate to project
+cd hospital-internal-management-system
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-```
+🌱 Environment Variables
 
-**Edit a file directly in GitHub**
+Create a .env file:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+DATABASE_URL=
+AUTH_SECRET=
+API_BASE_URL=
+📦 Production Build
+npm run build
+npm start
+🧪 Sample Seed Data
 
-**Use GitHub Codespaces**
+The system includes sample data for:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Patients
 
-## What technologies are used for this project?
+Staff roles
 
-This project is built with:
+Appointments
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Orders
 
-## How can I deploy this project?
+Prescriptions
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Inventory
 
-## Can I connect a custom domain to my Lovable project?
+Billing records
 
-Yes, you can!
+This allows full end-to-end demo flows.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+📈 Roadmap
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Future enhancements may include:
+
+HL7/FHIR interoperability
+
+Advanced clinical decision support
+
+Multi-branch hospital support
+
+Advanced analytics & BI dashboard
+
+Mobile companion app
+
+Insurance provider API integrations
+
+🤝 Contributing
+
+Fork the repository
+
+Create feature branch
+
+Commit changes
+
+Submit Pull Request
+
+📄 License
+
+MIT License (or your chosen license)
+
+👨‍⚕️ Built For
+
+Healthcare institutions seeking a modern, unified, secure internal management platform.
